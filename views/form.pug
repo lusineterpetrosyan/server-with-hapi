@@ -1,0 +1,25 @@
+html 
+	head
+
+	body
+		if (errors)
+			p(style={color: 'red'}) Fill in all fields
+		form(method='POST')
+			div 
+				label Username: 
+				input(type='text', name='username', required)
+			div
+				label Password:
+				input(type='password', name='password', required)
+			p
+			select(name='gender') 
+				option(value='Male') Male
+				option(value='Female') Female
+				option(value='Other') Other
+			div
+				label Agree receiving Porsche Panamera as a gift:
+				input(type='checkbox' name='agree')
+			p
+			button(type='submit') Submit
+
+				
