@@ -1,0 +1,9 @@
+{
+    "minContainers": 2,
+    "maxContainers": 3,
+    "memory": 256,
+    "healthCheck": "health",
+    "healthCheckType": "http",
+    "watchRestartTest": false,
+    "watch": "routes/*.js,app.js,api/*.js"
+}
