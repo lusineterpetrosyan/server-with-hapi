@@ -5,5 +5,5 @@
     "healthCheck": "health",
     "healthCheckType": "http",
     "watchRestartTest": false,
-    "watch": "routes/*.js,app.js,api/*.js"
+    "watch": "routes/*.js,app.js"
 }

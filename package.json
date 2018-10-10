@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "license": "ISC",
   "dependencies": {
     "hapi": "^17.5.1",
     "hapi-swagger": "^9.1.1",
@@ -15,6 +16,7 @@
     "moment": "^2.22.2",
     "node-fetch": "^2.1.2",
     "pug": "^2.0.3",
+    "toobusy-js": "^0.5.1",
     "vision": "^5.3.3"
   },
   "devDependencies": {

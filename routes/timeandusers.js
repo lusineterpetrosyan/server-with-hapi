@@ -1,5 +1,7 @@
-const Handlers = require('../handlers/timeandusers.js');
+const tooBusy = require('toobusy-js');
 const Joi = require('joi');
+
+const Handlers = require('../handlers/timeandusers.js');
 
 const routes = [];
 module.exports = routes;
@@ -83,4 +85,15 @@ routes.push({
     config: {
 		tags: ['api']
 	}
+});
+
+routes.push({
+  method: 'GET',
+  path: '/health',
+  config: {
+    auth: false,
+    description: 'Health Check',
+    tags: ['api', 'mutable', 'Health'],
+    handler: () => tooBusy.lag().toString(),
+  },
 });

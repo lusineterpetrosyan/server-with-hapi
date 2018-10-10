@@ -5,7 +5,7 @@ const Pug = require('pug');
 const HapiSwagger = require('hapi-swagger');
 const routes = require('./routes/timeandusers.js');
 const Pack = require('./package.json');
-const swaggerOptions = { 
+const swaggerOptions = {
     info: {
         'title' : Pack.name,
         'version': Pack.version
@@ -15,21 +15,20 @@ const swaggerOptions = {
     schemes : [ 'http', 'https']
 };
 const server = Hapi.server({
-    port: 3000,
-    host: 'localhost'
+    port: process.env.PORT || 3000,
 });
 
 const init = async () => {
     await server.register([
-            Inert, 
-            Vision, 
+            Inert,
+            Vision,
             {
                 plugin: HapiSwagger,
                 options:swaggerOptions,
             },
         ]);
     //await server.register(require('vision'));
-    
+
     server.views({
         engines: { pug: Pug },
         path: __dirname + '/views'
@@ -45,4 +44,3 @@ process.on('unhandledRejection', (err) => {
 });
 
 init();
-
